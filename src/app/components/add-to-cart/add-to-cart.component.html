@@ -1,0 +1,38 @@
+
+<div class="container">
+  <h3>Add to Cart</h3>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">SNo</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Price</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <th scope="row">{{product.sno}}</th>
+            <td>{{product.name}}</td>
+            <td><img [src]="product.image" width="50" height="50"> </td>
+            <td>{{product.price | currency : 'INR' }}</td>
+            <td>
+                <span class="glyphicon glyphicon-minus" (click)="decQty(product.sno)" aria-hidden="true"></span>
+                {{product.qty}}
+                <span class="glyphicon glyphicon-plus" (click)="incrQty(product.sno)" aria-hidden="true"></span>
+            </td>
+            <td>{{product.price * product.qty | currency : 'INR' }}</td>
+            
+          </tr>
+          <tr>
+            <td colspan="4"></td>
+            <td>Grand Total</td>
+            <td>{{calTotal() | currency : 'INR'}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
+

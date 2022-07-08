@@ -1,0 +1,10 @@
+.bg-yellow{
+    background-color: yellowgreen;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+.bg-gray{
+    background-color: lavender;
+}
